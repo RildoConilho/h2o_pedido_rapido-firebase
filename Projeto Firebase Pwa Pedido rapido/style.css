@@ -1,0 +1,363 @@
+:root {
+    --cor-primaria: #00BFFF;
+    --cor-texto: #212529;
+    --cor-texto-claro: #FFFFFF;
+    --cor-fundo: #F8F9FA;
+    --cor-fundo-cartao: #FFFFFF;
+    --cor-texto-secundario: #6C757D;
+    --cor-botao-hover: #0099CC;
+    --cor-botao-instalar: #28a745;
+    --cor-botao-instalar-hover: #218838;
+    --cor-botao-confirmar: #28a745; /* Verde para confirmar */
+    --cor-botao-confirmar-hover: #218838;
+    --cor-fab: #ffffff; /* Fundo branco para o FAB */
+    --sombra-fab: 0 4px 10px rgba(0, 0, 0, 0.2);
+    --borda-fab: 1px solid rgba(0, 191, 255, 0.5); /* Borda sutil com cor primária */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container-principal {
+    background-color: var(--cor-fundo-cartao);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #5D737E;
+    box-shadow: 0px 5px 15px rgba(0, 191, 255, 0.25),
+                0px 2px 6px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#saudacaoCliente {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    font-size: 1.8em;
+    color: var(--cor-texto);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.slogan {
+    font-size: 1.3em; /* AUMENTADO */
+    color: var(--cor-texto);
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-pedir-agua {
+    display: flex; /* Alterado para flex */
+    align-items: center; /* Centraliza ícones e texto */
+    justify-content: center; /* Centraliza ícones e texto */
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto 15px auto;
+    padding: 12px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-pedir-agua i { /* Estilo para ícones dentro do botão */
+    margin-right: 8px;
+}
+
+
+.btn-pedir-agua:hover, .btn-pedir-agua:focus {
+    background-color: var(--cor-botao-hover);
+}
+
+.btn-instalar-pwa {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-botao-instalar);
+    color: var(--cor-texto-claro);
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-bottom: 25px;
+}
+
+.btn-instalar-pwa:hover, .btn-instalar-pwa:focus {
+    background-color: var(--cor-botao-instalar-hover);
+}
+
+.info-contato {
+    font-size: 0.9em;
+    color: var(--cor-texto-secundario);
+    margin-top: 20px;
+}
+.info-contato p {
+    margin: 5px 0;
+}
+.info-contato a {
+    color: var(--cor-texto);
+    text-decoration: underline;
+    font-weight: bold;
+}
+.info-contato a:hover {
+    text-decoration: none;
+}
+
+#dicaInstalarIOS {
+    background-color: #e6f7ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #90c5e2;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#dicaInstalarIOS p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.5;
+}
+#dicaInstalarIOS a {
+    color: var(--cor-primaria);
+    font-weight: bold;
+    text-decoration: underline;
+}
+#dicaInstalarIOS a:hover {
+    text-decoration: none;
+}
+#fecharDicaIOS {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+    padding: 0 0 0 10px;
+    line-height: 1;
+}
+#fecharDicaIOS:hover {
+    color: #333;
+}
+
+#instrucoes-ios-detalhadas {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--cor-fundo-cartao);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+#instrucoes-ios-detalhadas h2 {
+    margin-top: 0;
+    color: var(--cor-primaria);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+ #instrucoes-ios-detalhadas ol {
+    padding-left: 20px;
+}
+#instrucoes-ios-detalhadas li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+#instrucoes-ios-detalhadas strong {
+    font-weight: bold;
+}
+
+#instrucoes-ios-detalhadas .dica-interna,
+#instrucoes-ios-detalhadas .resultado-final-titulo,
+#instrucoes-ios-detalhadas .resultado-final-item {
+    display: none;
+}
+#instrucoes-ios-detalhadas .resultado-final-item::before {
+    content: none;
+}
+
+/* CSS PARA OPÇÕES DE QUANTIDADE */
+#opcoesQuantidade {
+    background-color: var(--cor-fundo-cartao);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-top: 20px;
+}
+#opcoesQuantidade h2 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em; /* AUMENTADO */
+}
+
+.opcoes-lista label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.15em; /* AUMENTADO */
+    cursor: pointer;
+}
+
+.opcoes-lista input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+#outraQuantidade {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 120px);
+    margin-left: 5px;
+}
+
+/* Estilo para campos de nome e telefone */
+.input-label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+    font-size: 1em;
+}
+
+
+/* Novo estilo para o campo de observação */
+#observacoes-label { /* NOVO ID PARA ESTILIZAÇÃO */
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.05em; /* AUMENTADO */
+}
+
+#observacoes {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 60px; /* Altura mínima */
+}
+/* Estilo para a mensagem de feedback */
+#feedbackMessage {
+    display: none; /* Inicialmente oculto */
+    background-color: #e0ffe0; /* Fundo verde claro */
+    color: #28a745; /* Texto verde */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    flex-direction: column; /* Para alinhar mensagem e botão verticalmente */
+    align-items: center; /* Centralizar itens */
+}
+#feedbackMessage p {
+    margin: 0 0 10px 0; /* Margem inferior para o parágrafo da mensagem */
+}
+
+/* Mensagem de erro para validação */
+.error-message { /* Alterado para classe */
+    display: none; /* Inicialmente oculto */
+    color: #dc3545; /* Vermelho */
+    background-color: #f8d7da; /* Fundo vermelho claro */
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Estilo para spinner de carregamento */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-left: 10px; /* Espaçamento entre o texto e o spinner */
+    display: inline-block; /* Garante que esteja na mesma linha do texto */
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Floating Action Button (FAB) para iOS */
+#fabSair {
+    display: none; /* Inicialmente oculto, JS irá mostrar apenas em iOS standalone */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-fab);
+    color: var(--cor-texto); /* Cor do ícone/texto */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--sombra-fab);
+    border: var(--borda-fab);
+    cursor: pointer;
+    font-size: 1.8em; /* Tamanho do ícone */
+    text-decoration: none; /* Remover sublinhado do link */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#fabSair:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+/* Ajuste para o ícone de casa no FAB */
+#fabSair i {
+    font-size: 1em; /* Ajusta o tamanho do ícone Font Awesome dentro do FAB */
+}
