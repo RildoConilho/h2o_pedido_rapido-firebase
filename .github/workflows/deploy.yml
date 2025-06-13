@@ -22,8 +22,8 @@ jobs:
       run: npm install -g firebase-tools
 
     - name: Deploy to Firebase
-      run: firebase deploy --only hosting
+      run: firebase deploy --only hosting --project h2o-pedido-rapido # ESTA LINHA FOI ALTERADA PARA INCLUIR O PROJETO
       env:
         # Novo: Usando a chave da conta de serviço
-        GCLOUD_PROJECT: h2o-pedido-rapido # Substitua pelo ID do seu projeto Firebase (o ID é 'h2o-pedido-rapido')
+        GCLOUD_PROJECT: h2o-pedido-rapido # Este ainda pode ser útil para outras ferramentas, mas o --project é direto
         FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }} # Usaremos o segredo como token
