@@ -1,0 +1,42 @@
+name: Generate Firestore Configs
+
+on:
+  workflow_dispatch: # Isso permite que você acione este workflow manualmente
+
+jobs:
+  generate_configs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18' # Uma versão LTS recente
+
+    - name: Install Firebase CLI
+      run: npm install -g firebase-tools
+
+    - name: Generate Firestore Configs
+      run: |
+        firebase init firestore --project h2o-pedido-rapido --json --yes
+        echo "::set-output name=rules::$(cat firestore.rules)"
+        echo "::set-output name=indexes::$(cat firestore.indexes.json)"
+      id: generate
+      env:
+        GCLOUD_PROJECT: h2o-pedido-rapido # Seu project ID
+        FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }} # Usando o segredo que você já tem
+
+    - name: Display Rules
+      run: |
+        echo "--- firestore.rules ---"
+        echo "${{ steps.generate.outputs.rules }}"
+        echo "-----------------------"
+
+    - name: Display Indexes
+      run: |
+        echo "--- firestore.indexes.json ---"
+        echo "${{ steps.generate.outputs.indexes }}"
+        echo "------------------------------"
