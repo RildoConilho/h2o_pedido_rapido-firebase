@@ -1,0 +1,29 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main # Altere para 'master' se sua branch principal for 'master'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18' # Ou '20', uma versão LTS recente que seja compatível com Firebase CLI
+
+    - name: Install Firebase CLI
+      run: npm install -g firebase-tools
+
+    - name: Deploy to Firebase
+      run: firebase deploy --only hosting
+      env:
+        # Novo: Usando a chave da conta de serviço
+        GCLOUD_PROJECT: h2o-pedido-rapido # Substitua pelo ID do seu projeto Firebase (o ID é 'h2o-pedido-rapido')
+        FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }} # Usaremos o segredo como token
