@@ -24,5 +24,8 @@ jobs:
     - name: Deploy to Firebase
       run: firebase deploy --only hosting --project h2o-pedido-rapido
       env:
-        # Usando a variável de ambiente recomendada para Service Accounts
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        # Revertendo para FIREBASE_TOKEN para tentar resolver o problema de autenticação
+        # O Firebase CLI geralmente espera FIREBASE_TOKEN em CI/CD.
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        # Adicionar esta variável para indicar que é um ambiente de CI
+        CI: true
